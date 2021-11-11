@@ -7,15 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class ContaService {
     @Autowired
-    private ContaRepository ContaRepository;
+    private ContaRepository contaRepository;
+
+    public List<Conta> exibirContas(){
+Iterable<Conta> listaDeContas= contaRepository.findAll();
+
+        return (List<Conta>) listaDeContas;
+    }
 
 
     public Conta salvarConta(Conta conta){
-        ContaRepository.save(conta);
+        contaRepository.save(conta);
         verificarDatas(conta);
         return conta;
     }

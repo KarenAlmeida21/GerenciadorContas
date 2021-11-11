@@ -1,5 +1,6 @@
 package br.com.zup.GerenciadorContas.dtos;
 
+import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.enuns.Tipo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,4 +14,6 @@ public class RetornoCadastroDto {
     private String nome;
     private double valor;
     private Tipo tipo;
+
+
 }
