@@ -14,7 +14,7 @@ public class ContaService {
     @Autowired
     private ContaRepository contaRepository;
 
-    public List<Conta> exibirContas(){
+    public List<Conta> exibirConta(){
 Iterable<Conta> listaDeContas= contaRepository.findAll();
 
         return (List<Conta>) listaDeContas;
