@@ -4,4 +4,5 @@ public enum Status {
     AGUARDANDO,
     PAGO,
     VENCIDA;
+
 }

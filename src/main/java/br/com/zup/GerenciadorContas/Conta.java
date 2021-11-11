@@ -6,6 +6,7 @@ import br.com.zup.GerenciadorContas.enuns.Tipo;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDate;
 
 @Entity
 @Table(name = "contas")
@@ -76,7 +77,8 @@ public class Conta {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }
+
