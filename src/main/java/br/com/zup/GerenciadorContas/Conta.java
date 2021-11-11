@@ -3,11 +3,16 @@ package br.com.zup.GerenciadorContas;
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.enuns.Tipo;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
+
+@Entity
+@Table(name = "contas")
 
 public class Conta {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nome;
     private double valor;
     private Tipo tipo;
