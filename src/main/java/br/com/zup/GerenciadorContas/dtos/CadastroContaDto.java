@@ -1,5 +1,7 @@
 package br.com.zup.GerenciadorContas.dtos;
 
+import br.com.zup.GerenciadorContas.Conta;
+import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.enuns.Tipo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,5 +17,12 @@ public class CadastroContaDto {
     private Tipo tipo;
     private LocalDate dataDeVencimento;
 
+
+    public class ExibirContaDTO {
+        private int id;
+        private String nome;
+        private double valor;
+        private Status status;
+    }
 
 }

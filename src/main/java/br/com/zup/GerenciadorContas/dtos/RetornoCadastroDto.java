@@ -13,5 +13,4 @@ public class RetornoCadastroDto {
     private String nome;
     private double valor;
     private Tipo tipo;
-
 }
