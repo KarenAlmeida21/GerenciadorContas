@@ -1,7 +1,7 @@
 package br.com.zup.GerenciadorContas.service;
 
 import br.com.zup.GerenciadorContas.Conta;
-import br.com.zup.GerenciadorContas.ContaRepository;
+import br.com.zup.GerenciadorContas.repositories.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +13,10 @@ public class ContaService {
     private ContaRepository ContaRepository;
 
 
+    public Conta salvarConta(Conta conta){
+        ContaRepository.save(conta);
+        return conta;
+    }
 
 
 
