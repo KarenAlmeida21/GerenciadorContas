@@ -9,7 +9,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -44,6 +43,17 @@ public class ContaController {
         return listaDeContas;
     }
 
+
+    @GetMapping("/{id}")
+    public RetornoContaDto exibirConta(@PathVariable int id){
+        Conta conta = contaService.buscarContaporId(id);
+       return modelMapper.map(conta, RetornoContaDto.class);
+
+    }
+
+
+
+
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public RetornoContaDto informarPagamento(@PathVariable int id, @RequestBody RetornoContaDto contaDto) {
@@ -53,6 +63,8 @@ public class ContaController {
         throw new StatusInvalidoException("Este Status Não é Valido");
 
     }
+
+
 
 
 }
