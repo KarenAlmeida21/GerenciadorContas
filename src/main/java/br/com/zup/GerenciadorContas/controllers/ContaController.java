@@ -5,7 +5,6 @@ import br.com.zup.GerenciadorContas.dtos.CadastrarDto;
 import br.com.zup.GerenciadorContas.dtos.RetornoCadastroContaDto;
 import br.com.zup.GerenciadorContas.entity.Conta;
 import br.com.zup.GerenciadorContas.dtos.FiltroContaDto;
-import br.com.zup.GerenciadorContas.repositories.ContaRepository;
 import br.com.zup.GerenciadorContas.service.ContaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

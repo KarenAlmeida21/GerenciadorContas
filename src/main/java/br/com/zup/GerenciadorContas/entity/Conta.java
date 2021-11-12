@@ -2,6 +2,7 @@ package br.com.zup.GerenciadorContas.entity;
 
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.enuns.Tipo;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -19,6 +20,7 @@ public class Conta {
     private double valor;
     private Tipo tipo;
     private LocalDate dataDeVencimento;
+    @Column(nullable = false)
     private LocalDateTime dataDePagamento;
     private Status status;
 

@@ -1,5 +1,6 @@
 package br.com.zup.GerenciadorContas.service;
 
+import br.com.zup.GerenciadorContas.dtos.AtualizarContaDto;
 import br.com.zup.GerenciadorContas.entity.Conta;
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.repositories.ContaRepository;
@@ -39,18 +40,18 @@ public class ContaService {
         }
     }
 
-    public Conta buscarContaporId(int id){
+    public boolean buscarContaporId(int id){
         Optional<Conta>contaId = contaRepository.findById(id);
         if(contaId.isEmpty()){throw new RuntimeException("Nada encontrado");
         }
-        return contaId.get();
+        return true;
 
     }
 
-
-
-
 }
+
+
+
 
 
 
