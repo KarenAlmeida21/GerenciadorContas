@@ -13,9 +13,11 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "contas")
+
 @Getter
 @Setter
 @NoArgsConstructor
+
 public class Conta {
 
 
@@ -24,10 +26,12 @@ public class Conta {
     private int id;
     private String nome;
     private double valor;
+    @Enumerated(EnumType.STRING)
     private Tipo tipo;
     private LocalDate dataDeVencimento;
     @Column(nullable = false)
     private LocalDateTime dataDePagamento;
+    @Enumerated(EnumType.STRING)
     private Status status;
 
 

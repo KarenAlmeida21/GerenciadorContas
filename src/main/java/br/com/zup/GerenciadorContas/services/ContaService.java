@@ -1,10 +1,12 @@
 package br.com.zup.GerenciadorContas.services;
+
 import br.com.zup.GerenciadorContas.entity.Conta;
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.exceptions.ContaNaoLocalizadaException;
 import br.com.zup.GerenciadorContas.repositories.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.Optional;
 @Service
 
 public class ContaService {
-    @Autowired private Conta conta;
+
 
     @Autowired
     private ContaRepository contaRepository;
