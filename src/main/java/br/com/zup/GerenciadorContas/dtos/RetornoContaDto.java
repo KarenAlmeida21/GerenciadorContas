@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -14,10 +17,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class RetornoContaDto {
     private int id;
+    @Size(min = 2, message = "Um nome deve ter ao menos 2 caracteres")
     private String nome;
+
+    @DecimalMin(value = "0.01", message = "O valor da conta deve ser superior a R$ 0.01")
     private double valor;
     private Tipo tipo;
+
+    @NotNull(message = "A data de vencimento deve ser informada")
     private LocalDate dataDeVencimento;
+
     private LocalDateTime dataDePagamento;
     private Status status;
 }
