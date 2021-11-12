@@ -41,13 +41,15 @@ public class ContaService {
         }
     }
 
-    public boolean buscarContaporId(int id){
+    public Conta buscarContaporId(int id){
         Optional<Conta>contaId = contaRepository.findById(id);
         if(contaId.isEmpty()){throw new ContaNaoLocalizadaException();
         }
-        return true;
-
+        return contaId.get();
     }
+
+
+
 
 
 }
