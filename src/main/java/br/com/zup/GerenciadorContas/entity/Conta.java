@@ -28,8 +28,9 @@ public class Conta {
     private double valor;
     @Enumerated(EnumType.STRING)
     private Tipo tipo;
-    private LocalDate dataDeVencimento;
     @Column(nullable = false)
+    private LocalDate dataDeVencimento;
+    @Column(nullable = true)
     private LocalDateTime dataDePagamento;
     @Enumerated(EnumType.STRING)
     private Status status;

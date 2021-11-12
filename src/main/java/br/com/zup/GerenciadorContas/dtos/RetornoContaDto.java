@@ -18,12 +18,9 @@ import java.time.LocalDateTime;
 public class RetornoContaDto {
     private int id;
     private String nome;
-
     private double valor;
     private Tipo tipo;
-
     private LocalDate dataDeVencimento;
-
     private LocalDateTime dataDePagamento;
     private Status status;
 }

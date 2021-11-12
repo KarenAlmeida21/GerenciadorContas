@@ -48,7 +48,7 @@ public class ContaService {
     public Conta buscarContaporId(int id) {
         Optional<Conta> contaId = contaRepository.findById(id);
         if (contaId.isEmpty()) {
-            throw new ContaNaoLocalizadaException();
+            throw new ContaNaoLocalizadaException("Conta Não Localizada");
         }
         return contaId.get();
     }

@@ -1,4 +1,5 @@
 package br.com.zup.GerenciadorContas.config;
+import br.com.zup.GerenciadorContas.exceptions.ContaNaoLocalizadaException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestControllerAdvice
 public class ControllerAdvice {
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public java.util.List<ComunicacaoDeFalha> tratarErrosDeValidacao (MethodArgumentNotValidException excecao){
@@ -24,6 +26,12 @@ public class ControllerAdvice {
 
         return  erros;
 
+    }
+
+    @ExceptionHandler(ContaNaoLocalizadaException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ComunicacaoDeFalha contaNaoLocalizada(ContaNaoLocalizadaException exception){
+        return new ComunicacaoDeFalha(exception.getMessage());
     }
 
 }
