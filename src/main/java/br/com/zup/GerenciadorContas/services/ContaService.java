@@ -10,12 +10,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 
 public class ContaService {
-
-    @Autowired
-    private Conta conta;
+    @Autowired private Conta conta;
 
     @Autowired
     private ContaRepository contaRepository;
