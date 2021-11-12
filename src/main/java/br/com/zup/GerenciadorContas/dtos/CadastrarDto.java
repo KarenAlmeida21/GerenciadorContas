@@ -17,7 +17,7 @@ public class CadastrarDto {
     @Size(min = 2, message = "Um nome deve ter ao menos 2 caracteres")
     private String nome;
 
-    @DecimalMin(value = "0.01", message = "O valor da conta deve ser superior a R$ 0.01")
+    @DecimalMin(value = "0.01", message = "O valor da conta deve ser superior a R$ 0.00")
     @Digits(integer = 10, fraction = 2, message = "Valor inválido")
     private double valor;
 

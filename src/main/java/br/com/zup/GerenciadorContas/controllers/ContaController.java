@@ -50,7 +50,7 @@ public class ContaController {
         if (contaDto.getStatus() == Status.PAGO) {
             return modelMapper.map(contaService.atualizarConta(id), (Type) RetornoContaDto.class);
         }
-        throw new StatusInvalidoException();
+        throw new StatusInvalidoException("Este Status Não é Valido");
 
     }
 
