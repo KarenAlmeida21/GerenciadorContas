@@ -3,6 +3,7 @@ package br.com.zup.GerenciadorContas.service;
 import br.com.zup.GerenciadorContas.dtos.AtualizarContaDto;
 import br.com.zup.GerenciadorContas.entity.Conta;
 import br.com.zup.GerenciadorContas.enuns.Status;
+import br.com.zup.GerenciadorContas.exceptions.ContaNaoLocalizadaException;
 import br.com.zup.GerenciadorContas.repositories.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,11 +43,12 @@ public class ContaService {
 
     public boolean buscarContaporId(int id){
         Optional<Conta>contaId = contaRepository.findById(id);
-        if(contaId.isEmpty()){throw new RuntimeException("Nada encontrado");
+        if(contaId.isEmpty()){throw new ContaNaoLocalizadaException();
         }
-        return false;
+        return true;
 
     }
+
 
 }
 
