@@ -1,5 +1,6 @@
 package br.com.zup.GerenciadorContas.controllers;
 
+import br.com.zup.GerenciadorContas.dtos.AtualizarContaDto;
 import br.com.zup.GerenciadorContas.dtos.CadastrarDto;
 import br.com.zup.GerenciadorContas.dtos.RetornoCadastroContaDto;
 import br.com.zup.GerenciadorContas.entity.Conta;
@@ -41,8 +42,13 @@ public class ContaController {
             listaDeContas.add(exibirContaFiltro);
         }
         return listaDeContas;
-
     }
 
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+public AtualizarContaDto atualizarConta(@PathVariable int id, AtualizarContaDto atualizarContaDto){
+        Conta conta = contaService.
+
+    }
 
 }

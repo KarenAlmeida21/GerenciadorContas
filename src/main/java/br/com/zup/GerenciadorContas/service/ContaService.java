@@ -8,9 +8,13 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ContaService {
+    @Autowired
+    private Conta conta;
+
     @Autowired
     private ContaRepository contaRepository;
 
@@ -34,6 +38,17 @@ public class ContaService {
             conta.setStatus(Status.AGUARDANDO);
         }
     }
+
+    public Conta buscarContaporId(int id){
+        Optional<Conta>contaId = contaRepository.findById(id);
+        if(contaId.isEmpty()){throw new RuntimeException("Nada encontrado");
+        }
+        return contaId.get();
+
+    }
+
+
+
 
 }
 
