@@ -1,13 +1,10 @@
-package br.com.zup.GerenciadorContas.service;
+package br.com.zup.GerenciadorContas.services;
 import br.com.zup.GerenciadorContas.entity.Conta;
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.exceptions.ContaNaoLocalizadaException;
 import br.com.zup.GerenciadorContas.repositories.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;

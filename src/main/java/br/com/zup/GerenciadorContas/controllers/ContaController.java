@@ -2,7 +2,9 @@ package br.com.zup.GerenciadorContas.controllers;
 
 import br.com.zup.GerenciadorContas.dtos.*;
 import br.com.zup.GerenciadorContas.entity.Conta;
-import br.com.zup.GerenciadorContas.service.ContaService;
+import br.com.zup.GerenciadorContas.enuns.Status;
+import br.com.zup.GerenciadorContas.exceptions.StatusInvalidoException;
+import br.com.zup.GerenciadorContas.services.ContaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,9 +45,11 @@ public class ContaController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public RetornoContaDto atualizarConta(@PathVariable int id, @RequestBody RetornoContaDto contaDto) {
-
-        return modelMapper.map(contaService.atualizarConta(id), (Type) RetornoContaDto.class);
+    public RetornoContaDto informarPagamento(@PathVariable int id, @RequestBody RetornoContaDto contaDto) {
+        if (contaDto.getStatus() == Status.PAGO) {
+            return modelMapper.map(contaService.atualizarConta(id), (Type) RetornoContaDto.class);
+        }
+        throw new StatusInvalidoException();
 
     }
 
