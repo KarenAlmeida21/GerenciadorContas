@@ -1,6 +1,7 @@
 package br.com.zup.GerenciadorContas.dtos;
 
 import br.com.zup.GerenciadorContas.enuns.Tipo;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,6 +18,7 @@ public class CadastrarDto {
     private String nome;
 
     @DecimalMin(value = "0.01", message = "O valor da conta deve ser superior a R$ 0.01")
+    @Digits(integer = 10, fraction = 2, message = "Valor inválido")
     private double valor;
 
     private Tipo tipo;
