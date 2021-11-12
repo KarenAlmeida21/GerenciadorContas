@@ -14,22 +14,25 @@ public class ContaService {
     @Autowired
     private ContaRepository contaRepository;
 
-    public List<Conta> exibirConta(){
-Iterable<Conta> listaDeContas= contaRepository.findAll();
+    public List<Conta> exibirConta() {
+        Iterable<Conta> listaDeContas = contaRepository.findAll();
 
         return (List<Conta>) listaDeContas;
     }
 
 
-    public Conta salvarConta(Conta conta){
-        contaRepository.save(conta);
+    public Conta salvarConta(Conta conta) {
         verificarDatas(conta);
+        contaRepository.save(conta);
         return conta;
     }
-    public void verificarDatas(Conta conta){
-        if (conta.getDataDeVencimento().isBefore(LocalDate.now())){
-        conta.setStatus(Status.VENCIDA);
-        } else conta.setStatus(Status.AGUARDANDO);
+
+    public void verificarDatas(Conta conta) {
+        if (conta.getDataDeVencimento().isBefore(LocalDate.now())) {
+            conta.setStatus(Status.VENCIDA);
+        } else {
+            conta.setStatus(Status.AGUARDANDO);
+        }
     }
 
 }
