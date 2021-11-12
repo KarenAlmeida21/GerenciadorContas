@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class ContaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public RetornoContaDto cadastrarConta(@RequestBody CadastrarDto conta) {
+    public RetornoContaDto cadastrarConta(@RequestBody @Valid CadastrarDto conta) {
         Conta contafutura = modelMapper.map(conta, Conta.class);
 
         return modelMapper.map(contaService.salvarConta(contafutura), RetornoContaDto.class);
