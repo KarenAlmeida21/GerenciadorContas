@@ -17,7 +17,5 @@ public class RetornoCadastroContaDto {
     private String nome;
     private double valor;
     private Tipo tipo;
-    private LocalDate dataDeVencimento;
-    private LocalDateTime dataDePagamento;
-    private Status status;
+
 }
