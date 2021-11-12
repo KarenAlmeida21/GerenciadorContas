@@ -1,4 +1,4 @@
-package br.com.zup.GerenciadorContas;
+package br.com.zup.GerenciadorContas.entity;
 
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.enuns.Tipo;
@@ -6,7 +6,7 @@ import br.com.zup.GerenciadorContas.enuns.Tipo;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDate;
+
 
 @Entity
 @Table(name = "contas")

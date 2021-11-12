@@ -1,6 +1,6 @@
 package br.com.zup.GerenciadorContas.repositories;
 
-import br.com.zup.GerenciadorContas.Conta;
+import br.com.zup.GerenciadorContas.entity.Conta;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

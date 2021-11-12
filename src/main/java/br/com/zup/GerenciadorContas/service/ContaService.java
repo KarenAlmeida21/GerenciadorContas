@@ -1,6 +1,6 @@
 package br.com.zup.GerenciadorContas.service;
 
-import br.com.zup.GerenciadorContas.Conta;
+import br.com.zup.GerenciadorContas.entity.Conta;
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.repositories.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +31,7 @@ Iterable<Conta> listaDeContas= contaRepository.findAll();
         conta.setStatus(Status.VENCIDA);
         } else conta.setStatus(Status.AGUARDANDO);
     }
+
 }
 
 
