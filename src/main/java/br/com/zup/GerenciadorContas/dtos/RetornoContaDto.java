@@ -12,10 +12,12 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-public class RetornoCadastroContaDto {
+public class RetornoContaDto {
     private int id;
     private String nome;
     private double valor;
     private Tipo tipo;
-
+    private LocalDate dataDeVencimento;
+    private LocalDateTime dataDePagamento;
+    private Status status;
 }

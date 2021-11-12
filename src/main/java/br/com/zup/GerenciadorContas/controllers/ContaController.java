@@ -25,10 +25,10 @@ public class ContaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public RetornoCadastroContaDto cadastrarConta(@RequestBody CadastrarDto conta) {
+    public RetornoContaDto cadastrarConta(@RequestBody CadastrarDto conta) {
         Conta contafutura = modelMapper.map(conta, Conta.class);
 
-        return modelMapper.map(contaService.salvarConta(contafutura), RetornoCadastroContaDto.class);
+        return modelMapper.map(contaService.salvarConta(contafutura), RetornoContaDto.class);
     }
 
     @GetMapping
@@ -43,9 +43,9 @@ public class ContaController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public RetornoStatusDto atualizarConta(@PathVariable int id, @RequestBody RetornoStatusDto retornoStatusDto) {
+    public RetornoContaDto atualizarConta(@PathVariable int id, @RequestBody RetornoContaDto contaDto) {
 
-        return modelMapper.map(contaService.atualizarConta(id), (Type) RetornoStatusDto.class);
+        return modelMapper.map(contaService.atualizarConta(id), (Type) RetornoContaDto.class);
 
     }
 
