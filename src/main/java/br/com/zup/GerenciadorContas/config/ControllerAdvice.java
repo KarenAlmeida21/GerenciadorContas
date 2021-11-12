@@ -2,6 +2,7 @@ package br.com.zup.GerenciadorContas.config;
 import br.com.zup.GerenciadorContas.exceptions.ContaNaoLocalizadaException;
 import br.com.zup.GerenciadorContas.exceptions.StatusInvalidoException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -38,6 +39,11 @@ public class ControllerAdvice {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ComunicacaoDeFalha statusInvalido(StatusInvalidoException exception){
         return new ComunicacaoDeFalha((exception.getMessage()));
+    }
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    public ComunicacaoDeFalha manipularExcessao(HttpMessageNotReadableException exception){
+        return new ComunicacaoDeFalha("Erro de sintaxe");
     }
 
 }
