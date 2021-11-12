@@ -46,7 +46,9 @@ public class ContaController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
 public AtualizarContaDto atualizarConta(@PathVariable int id, AtualizarContaDto atualizarContaDto){
-        Conta conta = contaService.
+Conta conta = modelMapper.map(id, Conta.class);
+return modelMapper.map(contaService.atualizarConta(id),
+
 
     }
 
