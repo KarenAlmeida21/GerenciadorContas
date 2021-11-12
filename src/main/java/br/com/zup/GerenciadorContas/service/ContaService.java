@@ -1,6 +1,4 @@
 package br.com.zup.GerenciadorContas.service;
-
-import br.com.zup.GerenciadorContas.dtos.AtualizarContaDto;
 import br.com.zup.GerenciadorContas.entity.Conta;
 import br.com.zup.GerenciadorContas.enuns.Status;
 import br.com.zup.GerenciadorContas.exceptions.ContaNaoLocalizadaException;
@@ -20,6 +18,9 @@ public class ContaService {
 
     @Autowired
     private ContaRepository contaRepository;
+
+    public ContaService() {
+    }
 
     public List<Conta> exibirConta() {
         Iterable<Conta> listaDeContas = contaRepository.findAll();

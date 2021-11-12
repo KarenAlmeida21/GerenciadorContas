@@ -1,16 +1,14 @@
 package br.com.zup.GerenciadorContas.controllers;
 
-import br.com.zup.GerenciadorContas.dtos.AtualizarContaDto;
-import br.com.zup.GerenciadorContas.dtos.CadastrarDto;
-import br.com.zup.GerenciadorContas.dtos.RetornoCadastroContaDto;
+import br.com.zup.GerenciadorContas.dtos.*;
 import br.com.zup.GerenciadorContas.entity.Conta;
-import br.com.zup.GerenciadorContas.dtos.FiltroContaDto;
 import br.com.zup.GerenciadorContas.service.ContaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,11 +43,11 @@ public class ContaController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-public AtualizarContaDto atualizarConta(@PathVariable int id, AtualizarContaDto atualizarContaDto){
-Conta conta = modelMapper.map(id, Conta.class);
-return modelMapper.map(contaService.atualizarConta(id),
+    public RetornoStatusDto atualizarConta(@PathVariable int id, @RequestBody RetornoStatusDto retornoStatusDto) {
 
+        return modelMapper.map(contaService.atualizarConta(id), (Type) RetornoStatusDto.class);
 
     }
+
 
 }
